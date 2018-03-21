@@ -7,7 +7,6 @@ function initApp() {
 }
 
 function addClickHandler(argument) {
-	// body...
 }
 
 class Controller {
