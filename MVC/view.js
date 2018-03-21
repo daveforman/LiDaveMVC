@@ -18,4 +18,5 @@ function getScore(){
 
 function returnScore(){
   alert("Your score is "+ getScore() +"/"+ tot);
+
 }
