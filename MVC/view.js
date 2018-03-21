@@ -1,21 +1,21 @@
-///Example from stack 
+Class View {
+    constructor(){
 
-var answers = ["A","C","B"], 
-    tot = answers.length;
+    }
+        
+    getCheckedValue( radioName ){
+        var radios = document.getElementsByName( radioName ); // Get radio group by-name
+        for(var y=0; y<radios.length; y++)
+          if(radios[y].checked) return radios[y].value; // return the checked value
+    }
 
-function getCheckedValue( radioName ){
-    var radios = document.getElementsByName( radioName ); // Get radio group by-name
-    for(var y=0; y<radios.length; y++)
-      if(radios[y].checked) return radios[y].value; // return the checked value
+     displayScore(result) {
+        if(result >= 70){
+            console.log("You can be our friend!")
+        } else {
+            console.log("You need to keep studying to be our friend!")
+        }
+      }
+    
 }
 
-function getScore(){
-  var score = 0;
-  for (var i=0; i<tot; i++)
-    if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
-  return score;
-}
-
-function returnScore(){
-  alert("Your score is "+ getScore() +"/"+ tot);
-}
