@@ -1,34 +1,28 @@
-<<<<<<< HEAD
-///Example from stack 
-
 
 class View {
     constructor(){
         this.userAnswers =[];
+        this.length = 8;
+        this.getUserAnswers = this.getUserAnswers.bind(this);
     }
         
     getUserAnswers(){
-        var radios = document.getElementsByName( "question"+y ); // Get radio group by-name
-        for(var y=0; y<radios.length; y++){}
-          if(radios[y].checked){ 
-              this.userAnswers.push(radios[y]);
-          }
-          controller.compareAnswers(this.userAnswers);
+        for(var i=0; i<this.length; i++){
+          var radio = $('input[name =question' + i + ']' ).val();
+          console.log(radio);
+          this.userAnswers.push(radio);
+        }
+        console.log(radio.val());
+        controller.compareAnswers(this.userAnswers);
     }
     
-    getScore(){
-        for (var i=0; i<this.userAnswers.length; i++)
-        if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
-        
-  }
-
-     displayScore(result) {
-        if(result >= .7){
-            console.log("You can be our friend!")
-        } else {
-            console.log("You need to keep studying to be our friend!")
-        }
-      }
+	 displayScore(result) {
+	    if(result >= .7){
+	        console.log("You can be our friend!")
+	    } else {
+	        console.log("You need to keep studying to be our friend!")
+	    }
+	  }
     
 }
 
