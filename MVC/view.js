@@ -4,11 +4,9 @@ class View {
     }
         
     getUserAnswers(){
-        var radios = document.getElementsByName( "question"+y ); // Get radio group by-name
         for(var y=0; y<radios.length; y++){}
-          if(radios[y].checked){ 
-              this.userAnswers.push(radios[y]);
-          }
+        var radios = document.getElementsByName( "question"+y )
+          
           controller.compareAnswers(this.userAnswers);
     }
     
@@ -21,8 +19,10 @@ class View {
      displayScore(result) {
         if(result >= .7){
             console.log("You can be our friend!")
+            $( ".result" ).text("You can be our friend").addClass("friend");
         } else {
             console.log("You need to keep studying to be our friend!")
+            $( ".result" ).text("You failed! You need to keep studying to be our friend!").addClass("notFriend");
         }
       }
     
