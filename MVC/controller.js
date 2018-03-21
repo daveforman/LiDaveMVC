@@ -1,8 +1,8 @@
 $(document).ready(initApp);
 
 function initApp() {
-	var controller = new Controller();
-	var view = new View();
+	controller = new Controller();
+	view = new View();
 	$('#submit').on('click', view.getUserAnswers);	
 }
 
@@ -11,7 +11,7 @@ function addClickHandler(argument) {
 
 class Controller {
 	constructor() {
-		this.answer = ['A', 'C', 'B']
+		this.answer = ['B', 'D', 'B', 'D','C', 'D', 'A','C'];
 	}
 	
 	compareAnswers(inputArr){
@@ -20,6 +20,7 @@ class Controller {
 			if(inputArr[i] === this.answer[i])
 				correctCounter++;
 		}
+		console.log('correctCounter', correctCounter);
 		view.displayScore(correctCounter/this.answer.length);
 	}
 }
@@ -28,7 +29,3 @@ class Controller {
 
 
 
-// function returnScore(result){
-//   alert("Your score is "+ getScore() +"/"+ tot);
-
-// }

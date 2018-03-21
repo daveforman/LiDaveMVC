@@ -8,21 +8,26 @@ class View {
         
     getUserAnswers(){
         for(var i=0; i<this.length; i++){
-          var radio = $('input[name =question' + i + ']' ).val();
-          console.log(radio);
-          this.userAnswers.push(radio);
+          var radio = $(`input[name ='question${i}']:checked`);
+      	  console.log('the index now is:', i);
+      	  console.log('radio right now is:', radio.val());
+      	  this.userAnswers.push(radio.val());
         }
-        console.log(radio.val());
+        console.log('The answer array is:',this.userAnswers);
         controller.compareAnswers(this.userAnswers);
     }
     
-	 displayScore(result) {
-	    if(result >= .7){
-	        console.log("You can be our friend!")
-	    } else {
-	        console.log("You need to keep studying to be our friend!")
-	    }
-	  }
+
+     displayScore(result) {
+        console.log('The result is',result);
+        if(result >= .7){
+            console.log("You can be our friend!")
+            $( ".result" ).text("You can be our friend").addClass("friend");
+        } else {
+            console.log("You need to keep studying to be our friend!")
+            $( ".result" ).text("You failed! You need to keep studying to be our friend!").addClass("notFriend");
+        }
+      }
     
 }
 
