@@ -1,4 +1,3 @@
-
 class View {
     constructor(){
         this.userAnswers =[];
@@ -17,18 +16,16 @@ class View {
         controller.compareAnswers(this.userAnswers);
     }
     
-
-     displayScore(result) {
-        console.log('The result is',result);
-        if(result >= .7){
-            console.log("You can be our friend!")
-            $( ".result" ).text("You can be our friend").addClass("friend");
-        } else {
-            console.log("You need to keep studying to be our friend!")
-            $( ".result" ).text("You failed! You need to keep studying to be our friend!").addClass("notFriend");
-        }
+    displayScore(result) {
+      console.log('The result is',result);
+      if(result >= .7){
+          console.log("You can be our friend!")
+          $( ".result" ).text("Yay! You can be our friend!").addClass("friend");
+      } else {
+          console.log("You need to keep studying to be our friend!")
+          $( ".result" ).text("You failed! You need to keep studying to be our friend!").addClass("notFriend");
       }
-    
+    }
 }
 
 

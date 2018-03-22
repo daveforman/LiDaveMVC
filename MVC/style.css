@@ -1,16 +1,15 @@
 body {
     display: grid;
-    grid-template-rows: 10vh 6fr 2fr;
+    grid-template-rows: 10vh 6fr 1fr;
     grid-template-columns: 2fr 6fr 2fr;
 }
 
-ul {
+ol {
     margin: 0 auto;
     width: 80%;
     grid-row: 2/3;
     grid-column: 2/3;
     background-color: rgb(192, 192, 192);
-
 }
 
 header {
@@ -19,7 +18,7 @@ header {
     text-align: center;
     margin: 0 auto;
     margin-top: 5px;
-    width: 80%;
+    width: 70%;
 }
 
 h1 {
@@ -46,7 +45,6 @@ h1 {
 .friend {
     background-color: green;
 }
-
 
 .notFriend {
     background-color: red;

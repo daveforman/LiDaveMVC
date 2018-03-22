@@ -3,10 +3,11 @@ $(document).ready(initApp);
 function initApp() {
 	controller = new Controller();
 	view = new View();
-	$('#submit').on('click', view.getUserAnswers);	
+	addClickHandler();
 }
 
-function addClickHandler(argument) {
+function addClickHandler() {
+	$('#submit').on('click', view.getUserAnswers);	
 }
 
 class Controller {
